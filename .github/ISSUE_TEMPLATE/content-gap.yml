@@ -1,0 +1,64 @@
+name: Content gap
+description: Propose an important topic, audience, decision, or pattern that is missing.
+title: "[Content gap]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the missing coverage without including confidential or production information.
+
+  - type: textarea
+    id: gap
+    attributes:
+      label: Missing coverage
+      description: What topic, decision, pattern, or audience is not adequately covered?
+      placeholder: The guide does not currently explain...
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision
+    attributes:
+      label: Reader and decision
+      description: Who needs this material, and what decision should it help them make?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Foundations
+        - Architecture
+        - Governance
+        - Delivery and evaluation
+        - Production operations
+        - Adoption
+        - Worksheets
+        - Repository experience
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_scope
+    attributes:
+      label: Proposed scope
+      description: Outline the minimum useful coverage, including trade-offs or failure modes.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Authoritative references
+      description: Link primary sources and include jurisdiction, version, and as-of date when relevant.
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Sensitive information
+      options:
+        - label: I have not included secrets, customer data, confidential prompts, or internal system details.
+          required: true

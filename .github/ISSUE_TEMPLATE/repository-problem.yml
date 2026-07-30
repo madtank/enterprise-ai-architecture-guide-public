@@ -1,0 +1,67 @@
+name: Repository or publication problem
+description: Report a reproducible build, validation, navigation, automation, or publication failure.
+title: "[Repository problem]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide the smallest safe reproduction. Report vulnerabilities or exposed sensitive information privately through the security advisory link instead.
+
+  - type: dropdown
+    id: problem_type
+    attributes:
+      label: Problem type
+      options:
+        - Documentation build
+        - Local-link or navigation validation
+        - GitHub Actions or required check
+        - Dependency or tooling
+        - Repository permissions or ownership
+        - Publication or deployed site
+        - Rollback or recovery
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: revision
+    attributes:
+      label: Affected revision or workflow
+      description: Commit SHA, branch, pull request, workflow run, or release identifier. Enter unknown or not applicable with an explanation when necessary.
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and impact
+      description: Explain what failed, who or what is affected, and any safe workaround.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide minimal steps, exact commands, and redacted output when reproducible. Otherwise explain the observations and what prevents safe reproduction.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and proposed verification
+      description: Link safe logs, screenshots, prior working revision, or the check that should fail before a fix and pass afterward.
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Sensitive information
+      options:
+        - label: I have not included secrets, private security details, customer data, confidential prompts, or internal-only system information.
+          required: true

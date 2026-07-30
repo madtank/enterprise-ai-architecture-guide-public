@@ -1,0 +1,19 @@
+# The repository owner reviews all changes.
+* @madtank
+
+# These paths change repository authority, validation, publication, or the
+# control guidance itself. CODEOWNERS routes review; repository rules must
+# enforce required approval.
+/.github/ @madtank
+/AGENTS.md @madtank
+/OWNERSHIP.md @madtank
+/DEPLOYMENT.md @madtank
+/CONTRIBUTING.md @madtank
+/SECURITY.md @madtank
+/mkdocs.yml @madtank
+/docs/governance/ @madtank
+/docs/security/ @madtank
+/docs/architecture/ @madtank
+/docs/delivery/ @madtank
+/docs/operations/ @madtank
+/docs/worksheets/ @madtank

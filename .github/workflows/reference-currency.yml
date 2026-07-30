@@ -1,0 +1,78 @@
+name: Check reference currency
+
+on:
+  schedule:
+    - cron: "17 15 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reference-currency
+  cancel-in-progress: true
+
+jobs:
+  external-links:
+    name: Check authoritative source links
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Test and enforce external-reference URL policy
+        run: |
+          reference_files=()
+          while IFS= read -r reference_file; do
+            [[ -n "${reference_file}" ]] && reference_files+=("${reference_file}")
+          done < scripts/reference_source_files.txt
+          test "${#reference_files[@]}" -gt 0
+          python3 -m unittest discover -s tests -p 'test_check_reference_urls.py'
+          python3 scripts/check_reference_urls.py "${reference_files[@]}"
+
+      - name: Install verified Lychee
+        env:
+          GITHUB_TOKEN: ""
+        run: |
+          scripts/install_verified_lychee.sh "${RUNNER_TEMP}/verified-lychee/bin"
+
+      - name: Check external reference links
+        run: |
+          reference_files=()
+          while IFS= read -r reference_file; do
+            [[ -n "${reference_file}" ]] && reference_files+=("${reference_file}")
+          done < scripts/reference_source_files.txt
+          test "${#reference_files[@]}" -gt 0
+          extracted_links="${RUNNER_TEMP}/lychee-reference-links.txt"
+          env -i \
+            PATH="${RUNNER_TEMP}/verified-lychee/bin:/usr/local/bin:/usr/bin:/bin" \
+            HOME="${RUNNER_TEMP}/verified-lychee/home" \
+            lychee \
+              --dump \
+              --exclude-all-private \
+              --require-https \
+              --max-redirects 0 \
+              --min-tls TLSv1_2 \
+              --max-retries 2 \
+              --timeout 20 \
+              "${reference_files[@]}" > "${extracted_links}"
+          if [[ ! -s "${extracted_links}" ]]; then
+            echo "Lychee extracted zero reference links; refusing a vacuous pass." >&2
+            exit 1
+          fi
+          echo "Lychee extracted $(wc -l < "${extracted_links}") reference links."
+          env -i \
+            PATH="${RUNNER_TEMP}/verified-lychee/bin:/usr/local/bin:/usr/bin:/bin" \
+            HOME="${RUNNER_TEMP}/verified-lychee/home" \
+            lychee \
+              --no-progress \
+              --exclude-all-private \
+              --require-https \
+              --max-redirects 0 \
+              --min-tls TLSv1_2 \
+              --max-retries 2 \
+              --timeout 20 \
+              "${reference_files[@]}"

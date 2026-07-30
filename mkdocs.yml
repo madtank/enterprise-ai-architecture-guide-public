@@ -1,0 +1,90 @@
+site_name: Enterprise AI Architecture Guide
+site_description: Vendor-neutral guidance for governed, secure, production-grade enterprise AI systems.
+repo_name: madtank/enterprise-ai-architecture-guide
+repo_url: https://github.com/madtank/enterprise-ai-architecture-guide
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+nav:
+  - Home: index.md
+  - Guide map and coverage review: guide-map.md
+  - Worked golden thread: examples/worked-golden-thread.md
+  - Executive guide:
+      - Strategy, value, and risk appetite: executive/strategy-and-value.md
+      - Adoption roadmap: adoption/adoption-roadmap.md
+  - Foundations:
+      - Principles: foundations/principles.md
+      - Scope and vocabulary: foundations/scope-and-vocabulary.md
+      - Non-functional requirements: foundations/non-functional-requirements.md
+      - ADR 0001 - Security-first AI-DLC and governed routing: decisions/0001-security-first-ai-dlc-and-governed-routing.md
+  - Governance and assurance:
+      - Operating model: governance/operating-model.md
+      - AI management system: governance/ai-management-system.md
+      - Responsible AI and human factors: governance/responsible-ai-and-human-factors.md
+      - Risk tiers and control matrix: governance/control-matrix.md
+      - Enterprise AI control catalog: governance/control-catalog.md
+      - Framework alignment: governance/framework-alignment.md
+      - Third-party AI risk: governance/third-party-risk.md
+  - Enterprise architecture:
+      - Reference architecture: architecture/reference-architecture.md
+      - Data architecture: architecture/data-architecture.md
+      - Deployment patterns: architecture/deployment-patterns.md
+      - Agentic AI architecture: architecture/agentic-ai.md
+      - Governed model routing and agent dispatch: architecture/model-portfolio-and-routing.md
+      - Dated model and provider candidate catalog: architecture/model-and-provider-candidate-catalog.md
+  - Platform and security:
+      - AI platform engineering: platform/platform-engineering.md
+      - Security architecture: security/security-architecture.md
+      - Agent extension supply-chain security: security/agent-extension-supply-chain.md
+  - Delivery:
+      - AI system lifecycle: delivery/ai-lifecycle.md
+      - Security-first AI-assisted development lifecycle: delivery/security-first-ai-dlc.md
+      - Skills-first AI-assisted change workflow: delivery/skills-first-ai-development.md
+      - Code deployment and release: delivery/code-deployment.md
+      - Public release and external distribution: delivery/public-release-and-external-distribution.md
+      - MLOps, LLMOps, and AgentOps: delivery/mlops-llmops-agentops.md
+      - Predictive machine learning: delivery/predictive-ml.md
+      - Evaluation strategy: delivery/evaluation-strategy.md
+  - Operations:
+      - Production operations: operations/production-operations.md
+      - Incident, problem, and corrective action: operations/incident-problem-and-corrective-action.md
+      - Reliability and resilience: operations/resilience.md
+      - FinOps, capacity, and value: operations/finops-and-value.md
+  - Worksheets:
+      - Use-case assessment: worksheets/use-case-assessment.md
+      - AI risk and impact assessment: worksheets/ai-risk-impact-assessment.md
+      - Regulatory obligation register: worksheets/regulatory-obligation-register.md
+      - Architecture decision record: worksheets/architecture-decision-record.md
+      - AI system card: worksheets/system-card.md
+      - Identity and permission matrix: worksheets/identity-and-permission-matrix.md
+      - Agent execution and telemetry contract: worksheets/agent-execution-and-telemetry-contract.md
+      - Transfer, decommissioning, and retirement record: worksheets/transfer-decommissioning-and-retirement.md
+      - AI threat model: worksheets/threat-model.md
+      - Evaluation plan and report: worksheets/evaluation-plan-and-report.md
+      - Vendor assessment: worksheets/vendor-assessment.md
+      - Production readiness review: worksheets/production-readiness-review.md
+      - Public-release readiness record: worksheets/public-release-readiness.md
+      - AI-assisted change evidence: worksheets/ai-assisted-change-evidence.md
+      - Agent extension security assessment: worksheets/agent-extension-assessment.md
+      - Model routing and agent dispatch plan: worksheets/model-routing-and-agent-dispatch-plan.md
+      - Repository ownership and deployment plan: worksheets/repository-ownership-and-deployment-plan.md
+      - Incident and corrective-action record: worksheets/incident-and-corrective-action-record.md
+  - Glossary: glossary.md
+  - Authoritative references: references.md

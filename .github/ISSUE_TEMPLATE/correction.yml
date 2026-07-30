@@ -1,0 +1,68 @@
+name: Correction
+description: Report inaccurate, unclear, stale, or internally inconsistent guidance.
+title: "[Correction]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide enough evidence to verify the correction without including sensitive information.
+
+  - type: input
+    id: location
+    attributes:
+      label: Page or section
+      description: Provide the repository path, heading, or published URL.
+      placeholder: docs/governance/control-matrix.md — Tier 3 controls
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction_type
+    attributes:
+      label: Correction type
+      options:
+        - Factual error
+        - Stale or time-sensitive claim
+        - Broken link or navigation
+        - Terminology inconsistency
+        - Ambiguous or misleading guidance
+        - Formatting or accessibility
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current guidance
+      description: Quote only the shortest passage needed to identify the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is incorrect or unclear?
+      description: Explain the impact on a reader or architecture decision.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed correction
+      description: Suggest replacement guidance if possible.
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link authoritative sources and include jurisdiction, version, and as-of date when relevant.
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Sensitive information
+      options:
+        - label: I have not included secrets, customer data, confidential prompts, or internal system details.
+          required: true
