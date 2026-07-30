@@ -168,19 +168,19 @@ release. AI review is advisory and cannot provide independent approval.
 
 The repository is a source-only public reference distribution licensed under
 the
-[MIT License](https://github.com/madtank/enterprise-ai-architecture-guide/blob/main/LICENSE).
+[MIT License](https://github.com/madtank/enterprise-ai-architecture-guide-public/blob/main/LICENSE).
 Its clean public history excludes the private working history and operational
 evidence. No public site deployment is configured, and generated artifacts
 retain their own applicable terms. The
-[publication and provenance record](https://github.com/madtank/enterprise-ai-architecture-guide/blob/main/PUBLICATION.md)
+[publication and provenance record](https://github.com/madtank/enterprise-ai-architecture-guide-public/blob/main/PUBLICATION.md)
 defines the public boundary and validation. Verify that the following
 repository paths are reachable and that the private security-intake path
 works; a listed link is not evidence that its destination is usable:
 
-- [project status, provenance, and limitations](https://github.com/madtank/enterprise-ai-architecture-guide/blob/main/PUBLICATION.md);
-- [support and correction routes](https://github.com/madtank/enterprise-ai-architecture-guide/blob/main/SUPPORT.md);
-- [private security reporting policy](https://github.com/madtank/enterprise-ai-architecture-guide/blob/main/SECURITY.md); and
-- [contribution and review model](https://github.com/madtank/enterprise-ai-architecture-guide/blob/main/CONTRIBUTING.md).
+- [project status, provenance, and limitations](https://github.com/madtank/enterprise-ai-architecture-guide-public/blob/main/PUBLICATION.md);
+- [support and correction routes](https://github.com/madtank/enterprise-ai-architecture-guide-public/blob/main/SUPPORT.md);
+- [private security reporting policy](https://github.com/madtank/enterprise-ai-architecture-guide-public/blob/main/SECURITY.md); and
+- [contribution and review model](https://github.com/madtank/enterprise-ai-architecture-guide-public/blob/main/CONTRIBUTING.md).
 
 Do not put a suspected vulnerability, leaked secret, customer data,
 confidential prompt, or internal system detail in a public issue.

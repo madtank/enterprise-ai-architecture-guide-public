@@ -1,7 +1,7 @@
 site_name: Enterprise AI Architecture Guide
 site_description: Vendor-neutral guidance for governed, secure, production-grade enterprise AI systems.
-repo_name: madtank/enterprise-ai-architecture-guide
-repo_url: https://github.com/madtank/enterprise-ai-architecture-guide
+repo_name: madtank/enterprise-ai-architecture-guide-public
+repo_url: https://github.com/madtank/enterprise-ai-architecture-guide-public
 theme:
   name: material
   features:

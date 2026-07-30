@@ -6,7 +6,7 @@ review, merge, publication, incident response, and continuity are handled.
 ## Current owner
 
 - **Accountable repository steward:** `@madtank`
-- **Repository:** `madtank/enterprise-ai-architecture-guide`
+- **Repository:** `madtank/enterprise-ai-architecture-guide-public`
 - **Current status:** source-only public reference repository; original
   repository content licensed under MIT
 - **Canonical branch:** `main`
