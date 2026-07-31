@@ -223,6 +223,32 @@ the artifact, environment, threat model, or tested prerequisites invalidates
 the applicable result and returns the issue to candidate review. Verification,
 severity, and business materiality remain separate determinations.
 
+**Figure — Finding evidence states (not an AI-DLC or maturity sequence)**
+
+```mermaid
+flowchart LR
+    C["Candidate<br/>open finding"]
+    O{"Protected verification<br/>evidence outcome"}
+    V["Verified vulnerability<br/>exact artifact and environment"]
+    R["Rejected for tested boundary<br/>bounded negative evidence"]
+    I["Inconclusive attempt<br/>no finding-state change"]
+    T["Impact, severity, and materiality<br/>separate assessments"]
+
+    C --> O
+    O -->|"confirms security-property violation"| V
+    O -->|"rejects within stated boundary"| R
+    O -->|"insufficient or conflicting"| I
+    I --> C
+    V -.->|"assess separately"| T
+    V -->|"material boundary change"| C
+    R -->|"new evidence or material boundary change"| C
+```
+
+The diagram follows one scoped finding rather than ordering the analysis views.
+An inconclusive attempt adds evidence but does not close the candidate. Prior
+results remain historical evidence when new evidence or a material boundary
+change creates or supersedes the current-scope record.
+
 Agentic or autonomous vulnerability research may automate hypothesis and
 candidate generation, isolated execution, validation, and patch proposals. It
 requires explicit target authorization, an isolated non-production and
@@ -236,15 +262,16 @@ from results remains quarantined, versioned, tested, and separately approved
 under
 [G5 controlled learning](../delivery/security-first-ai-dlc.md#g5-controlled-learning).
 
-[NIST SP 800-115](https://www.nist.gov/publications/technical-guide-information-security-testing-and-assessment)
-provides a general testing-and-assessment process, while
-[NIST SP 800-231](https://csrc.nist.gov/pubs/sp/800/231/final) formalizes
-vulnerabilities as chains of weaknesses under defined causation, propagation,
-and composition rules. The
-[CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
-can inform prioritization, but catalog status does not replace
-environment-bound validation or an accountable risk decision, and absence
-from the catalog does not prove non-exploitation.
+Use authoritative sources as orthogonal lenses rather than combining them into
+one implied score or lifecycle:
+
+| Question | Primary input | Boundary |
+|---|---|---|
+| Which review, target-identification and analysis, or target-vulnerability-validation technique fits the authorized assessment? | [NIST SP 800-115](https://csrc.nist.gov/pubs/sp/800/115/final) | Its 2008 process structure is useful; its tool examples are not a complete current testing program |
+| What causal sequence of weaknesses produced a vulnerability? | [NIST SP 800-231](https://csrc.nist.gov/pubs/sp/800/231/final) | The formal Bugs Framework does not by itself prove an environment-specific attack path |
+| Which attack classes and adversary behaviors against AI systems should the threat model cover? | [NIST AI 100-2e2025](https://csrc.nist.gov/pubs/ai/100/2/e2025/final) and [MITRE ATLAS](https://atlas.mitre.org/) | Taxonomy or technique coverage generates hypotheses; it is not finding verification |
+| Has CISA recorded exploitation in the wild? | [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | Catalog status is a prioritization signal, not environment-bound validation or an accountable risk decision; absence does not prove non-exploitation |
+| How should received vulnerability reports be assessed, managed, and communicated? | [NIST SP 800-216](https://csrc.nist.gov/pubs/sp/800/216/final) | Adapt the federal guidance to organizational scope; it does not grant public-disclosure authority |
 
 ## Security evidence
 
