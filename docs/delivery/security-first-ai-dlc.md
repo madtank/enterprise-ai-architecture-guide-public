@@ -205,6 +205,16 @@ Deterministic checks should run from trusted configuration outside the branch
 where practical. Model-based reviewers should use bounded tools, independent
 context, calibrated tests, and a clear advisory label.
 
+For security findings, apply the
+[security-analysis views and finding states](../security/security-architecture.md#security-analysis-views-and-finding-states).
+A scan or inferential review produces a vulnerability candidate, not a
+verified vulnerability. Verification requires authorized protected
+reproduction or equivalent deterministic evidence bound to the exact artifact
+and environment; rejected and inconclusive results remain explicit. A second
+agent can protect test integrity but does not provide organizational
+independent assurance. Verification does not authorize disclosure, risk
+acceptance, merge, release, deployment, or production testing.
+
 Self-correction is bounded. Define maximum iterations, cumulative tokens,
 elapsed time, spend, and repeated-failure thresholds before execution.
 Exhaustion, conflicting evidence, an authorization error, or a critical

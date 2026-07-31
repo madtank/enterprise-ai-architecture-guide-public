@@ -2,7 +2,8 @@
 
 This bibliography favors official standards bodies, regulators, government cybersecurity agencies, and the owning organizations of open security frameworks. It is a source register for the guide, not an assertion that every source applies to every system.
 
-**Checked as of:** 2026-07-28
+**Full-register review:** 2026-07-28. Entries with a later source check state it
+directly.
 
 ## Governance and risk management
 
@@ -78,6 +79,9 @@ The provider-neutral control design remains in
 
 - [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) — enterprise cybersecurity outcomes across Govern, Identify, Protect, Detect, Respond, and Recover.
 - [NIST SP 800-53 Rev. 5, Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) — tailorable U.S. Government control catalog; NIST's current minor release was 5.2.0 on the 2026-07-28 source check.
+- [NIST SP 800-115, Technical Guide to Information Security Testing and Assessment](https://www.nist.gov/publications/technical-guide-information-security-testing-and-assessment) — September 2008 overview for planning and conducting technical security tests, analyzing findings, and developing mitigation strategies; it is not a complete current testing program; status checked 2026-07-30.
+- [NIST SP 800-231, Bug Framework](https://csrc.nist.gov/pubs/sp/800/231/final) — formal language and models for software and hardware weaknesses and vulnerabilities, including weakness chains governed by causation, propagation, and composition rules; checked 2026-07-30.
+- [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) — authoritative CISA catalog of vulnerabilities known to be exploited in the wild and a prioritization input; absence is not proof of non-exploitation; checked 2026-07-30.
 - [NIST SP 800-88 Rev. 2, Guidelines for Media Sanitization](https://csrc.nist.gov/pubs/sp/800/88/r2/final) — final September 2025 guidance for an organization-defined media-sanitization program; it supersedes Revision 1 and does not by itself authorize deletion.
 - [NIST SP 800-161 Rev. 1 Update 1, Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final) — final May 2022 lifecycle C-SCRM guidance with updates through November 2024.
 - [NIST SP 800-63-4, Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final) — final July 2025 guidance for identity proofing, authentication, and federation of people interacting with government systems; not a workload-identity or authorization standard.

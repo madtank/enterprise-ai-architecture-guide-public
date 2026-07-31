@@ -317,9 +317,13 @@ For probabilistic behavior, use a representative protected evaluation case,
 multiple trials where required, severity-weighted thresholds, and slice
 analysis. A single successful rerun is weak evidence.
 
+For a suspected vulnerability, apply the
+[security finding states](../security/security-architecture.md#security-analysis-views-and-finding-states)
+and keep candidate, verified, rejected, and inconclusive results distinct.
+An inconclusive attempt leaves the candidate and dependent decisions open.
 Vulnerability remediation also assesses exploitability, exposure window,
-credential or data compromise, affected versions, notification, and coordinated
-disclosure.
+credential or data compromise, affected versions, notification, and
+coordinated disclosure.
 
 ### 8. Verify independently
 
@@ -334,6 +338,8 @@ Verification should include:
 - staging or replay evidence against the release candidate.
 
 The change-producing agent's summary is not independent verification.
+Protected model or agent reproduction can add evidence, but it remains
+advisory and is not organizational independent assurance.
 
 ### 9. Release progressively
 
