@@ -33,6 +33,12 @@
 **Archive**
 : A controlled retained artifact with defined owner, purpose, access, integrity, retention, review, and final disposition. Archived bytes may contain executable content, but the governed archive state must provide no startup, credential, execution, or production-authority path. An archive is not necessarily deleted, decommissioned, or safe to expose.
 
+**Attack path**
+: A modeled sequence from a defined attacker position to a target asset or impact using some combination of vulnerabilities, exposure, network reachability, identities, credentials, permissions, configurations, and trust relationships. Record evidence, confidence, and uncertainty for each material link; treat the path as a hypothesis until the links needed for the claimed traversal are validated. An attack path need not contain a weakness chain.
+
+**Autonomous vulnerability research**
+: An authorized, bounded AI-assisted process that generates attack hypotheses and may exercise software in an isolated environment to discover, reproduce, and assess known or unknown weaknesses. Analytical autonomy does not authorize testing external or production targets, disclosure, merge, release, risk acceptance, or changes to active controls.
+
 **Capability profile**
 : A stable, provider-neutral contract for the quality, context, modality, tools, data, authority, latency, cost, verification, and fallback required for a class of model or agent work.
 
@@ -81,6 +87,9 @@
 **Evaluation**
 : Repeatable measurement of an AI system’s quality, safety, security, performance, cost, and business fitness.
 
+**Exploitability validation**
+: A controlled, evidence-producing determination of whether a vulnerability candidate represents a security-property violation that is reachable and reproducible under stated attacker prerequisites and deployment conditions. The result is verified, rejected, or inconclusive and remains bound to the tested artifact and environment. Impact, severity, and business materiality are recorded separately.
+
 **Forward recovery**
 : Restoration by applying a new corrective change or compatible migration instead of returning to a previous artifact version.
 
@@ -105,6 +114,9 @@
 
 **Independent assurance**
 : Assessment performed with sufficient organizational and decision-making independence from the people who developed or operate the system.
+
+**Inconclusive vulnerability validation**
+: A protected validation attempt that lacks sufficient or consistent evidence to verify or reject a vulnerability candidate for the tested boundary. The candidate remains open, dependent decisions remain on Hold, and the attempt cannot be treated as approval or proof of absence.
 
 **Inferential verification**
 : An advisory judgment produced through reasoning, such as model-based review. It can identify concerns but does not replace deterministic evidence or an authorized human decision.
@@ -171,6 +183,12 @@
 **Release manifest**
 : The immutable or tamper-evident record binding all compatible code, infrastructure, data, model, prompt, policy, index, tool, workflow, configuration, evaluation, and recovery revisions in a release.
 
+**Rejected vulnerability candidate**
+: A vulnerability candidate for which protected validation produced sufficient negative evidence for the exact tested artifact, environment, threat model, and prerequisites. Rejection is not proof of global absence; a material boundary or assumption change invalidates the result and returns the issue to candidate review.
+
+**Remediation validation**
+: Protected post-fix verification that the original reproduction no longer succeeds, required behavior remains intact, material bypasses or newly introduced weaknesses were assessed, and the evidence is bound to the corrected artifact or control revision. If promotion is required, bind that revision into a release candidate separately. Remediation validation does not establish deployed-state remediation, corrective-action effectiveness, incident closure, or corrective-action closure.
+
 **Residual risk**
 : Risk remaining after controls and treatment have been applied.
 
@@ -204,6 +222,9 @@
 **System of record**
 : The authoritative service or repository for a defined business entity or transaction.
 
+**Threat modeling**
+: Structured, scope-bound analysis of assets and security objectives, data flows, trust boundaries, attacker capabilities and goals, abuse cases, assumptions, threats, and required controls. A threat model informs testing and risk decisions; it is not automatic approval.
+
 **Tool**
 : A capability exposed to an AI runtime through a defined, authorized contract.
 
@@ -212,6 +233,18 @@
 
 **Vector store**
 : A service that stores and searches vector representations, often used for semantic retrieval. It does not replace source authorization or governance.
+
+**Verified vulnerability**
+: A vulnerability candidate for which reproducible or equivalent deterministic evidence demonstrates that a defined security property can be violated under stated conditions. Inferential or model judgment alone cannot assign this state; deterministic evidence produced through a protected execution path may support it. Verified does not mean independently assured, determine business acceptance, or authorize disclosure or production testing.
+
+**Vulnerability candidate**
+: A scanner, reviewer, agent, or analyst finding that indicates a potential security weakness but is not yet supported by reproducible or equivalent deterministic evidence of a security-property violation under stated conditions.
+
+**Vulnerability correlation**
+: Relating findings because they share a component, dependency, asset, cause, or risk context. Correlation neither orders the findings nor proves reachability, exploitability, material impact, or a weakness chain.
+
+**Weakness chain**
+: A causal sequence of two or more implementation weaknesses in which a consequence of one propagates as a cause or enabling condition of the next and the sequence ultimately enables a security failure. Each link and the composed sequence require reproducible or equivalent deterministic evidence. This guide prefers *weakness chain*; *software vulnerability chain* is treated as an informal synonym when every link is within software.
 
 **Workflow state**
 : Durable, authoritative progress and result data for a multi-step process, distinct from conversational context or model memory.

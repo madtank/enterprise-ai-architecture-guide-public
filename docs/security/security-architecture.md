@@ -199,6 +199,53 @@ Security testing should include:
 
 No prompt, filter, or model-level defense is complete. Validate layered controls and residual risk.
 
+### Security-analysis views and finding states
+
+Security-analysis depth and enterprise adoption maturity are separate axes.
+The following guide-defined working terms connect analysis results to evidence;
+they are not another lifecycle, maturity model, or release gate.
+
+| Analysis view | Result | Evidence boundary |
+|---|---|---|
+| Threat modeling | Scoped attacker hypotheses, abuse cases, and required security properties | A hypothesis directs testing; it is not a vulnerability finding |
+| Context-aware review | Vulnerability candidate | A scanner, model, agent, or analyst report remains unverified until a security-property violation is supported by reproducible or equivalent deterministic evidence |
+| Exploitability validation | Verified vulnerability, rejected-for-tested-boundary candidate, or inconclusive attempt | Record the exact artifact and environment, attacker prerequisites, reachability, reproduction, and security property violated or attacker capability gained; record impact, severity, and business materiality as separate triage outputs |
+| Vulnerability correlation | Relationship among findings, components, assets, causes, or risk context | Correlation does not prove order, reachability, exploitability, material impact, or a weakness chain |
+| Weakness-chain analysis | Evidenced causal sequence of two or more implementation weaknesses | Reproducible or equivalent deterministic evidence must show the causation, propagation, and composition of each link and the composed sequence |
+| Environment-aware attack-path analysis | Attack-path hypothesis or validated path from a defined attacker position to an asset or impact | The path may combine vulnerabilities, exposure, identities, credentials, permissions, configuration, and trust; record evidence, confidence, and uncertainty for each material link, and do not treat approved read-only inventory analysis as authority to exploit production |
+| Remediation validation | Evidence bound to the corrected artifact or control revision | Show that the original reproduction no longer succeeds, required behavior still passes, and material bypasses and regressions were assessed; bind a corrected revision into a release candidate only when promotion is required |
+
+The finding-state contract is `candidate → verified` or
+`candidate → rejected for the tested boundary`. An inconclusive attempt leaves
+the candidate open and dependent decisions on Hold. Rejection is bounded
+negative evidence, not proof that the weakness is absent. A material change to
+the artifact, environment, threat model, or tested prerequisites invalidates
+the applicable result and returns the issue to candidate review. Verification,
+severity, and business materiality remain separate determinations.
+
+Agentic or autonomous vulnerability research may automate hypothesis and
+candidate generation, isolated execution, validation, and patch proposals. It
+requires explicit target authorization, an isolated non-production and
+network-restricted environment, minimal test data and credentials,
+privacy-minimized protected evidence, bounded resources, stop conditions,
+access and retention rules, and a coordinated-disclosure path. Prefer
+non-weaponized reproducers or failing tests. Analytical autonomy does not
+authorize testing external or production targets, public disclosure, merge,
+release, risk acceptance, or automatic mutation of active controls. Learning
+from results remains quarantined, versioned, tested, and separately approved
+under
+[G5 controlled learning](../delivery/security-first-ai-dlc.md#g5-controlled-learning).
+
+[NIST SP 800-115](https://www.nist.gov/publications/technical-guide-information-security-testing-and-assessment)
+provides a general testing-and-assessment process, while
+[NIST SP 800-231](https://csrc.nist.gov/pubs/sp/800/231/final) formalizes
+vulnerabilities as chains of weaknesses under defined causation, propagation,
+and composition rules. The
+[CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+can inform prioritization, but catalog status does not replace
+environment-bound validation or an accountable risk decision, and absence
+from the catalog does not prove non-exploitation.
+
 ## Security evidence
 
 The production readiness record should link to:

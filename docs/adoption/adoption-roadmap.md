@@ -2,6 +2,15 @@
 
 The roadmap builds a repeatable delivery system before scaling the portfolio.
 
+Adoption phase and
+[security-analysis depth](../security/security-architecture.md#security-analysis-views-and-finding-states)
+are separate. Expand from threat context and deterministic scanning into
+protected exploitability validation, attack-path analysis, or bounded agentic
+research only when authorization, isolation, evidence handling, disclosure,
+and qualified review can support it. A later or more autonomous capability is
+not inherently better or required; use the least authority that produces
+sufficient evidence for the risk.
+
 ## Phase 1 — Establish control and vocabulary
 
 Outcomes:
