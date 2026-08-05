@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Sensitive security concern
-    url: https://github.com/madtank/enterprise-ai-architecture-guide/security/advisories/new
+    url: https://github.com/madtank/enterprise-ai-architecture-guide-public/security/advisories/new
     about: Report vulnerabilities privately. Do not include secrets in a public issue.
